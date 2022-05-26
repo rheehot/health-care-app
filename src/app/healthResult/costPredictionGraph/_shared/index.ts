@@ -1,0 +1,1 @@
+export { convertToData } from './utils';
