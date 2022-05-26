@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
   background-color: colors.$GRAY01;
 }
 
@@ -18,10 +19,10 @@
   position: relative;
   box-sizing: border-box;
   width: 360px;
-  height: 100vh;
+  height: 800px;
   padding: 40px;
   background-color: #fafbfe;
-  border-radius: 60px;
+  border-radius: 50px;
   transition: 300ms background-color;
 
   :root[color-theme='dark'] & {
