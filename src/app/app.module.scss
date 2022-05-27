@@ -7,12 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   background-color: colors.$GRAY01;
-}
-
-.scrollArea {
-  overflow: scroll;
 }
 
 .app {
@@ -20,113 +16,28 @@
   box-sizing: border-box;
   width: 360px;
   height: 800px;
-  padding: 40px;
-  background-color: #fafbfe;
+  padding-top: 40px;
+  background-color: colors.$THEME;
   border-radius: 60px;
   transition: 300ms background-color;
 
-  :root[color-theme='dark'] & {
-    background-color: #222222;
-
-    h1 {
-      color: colors.$WHITE;
-    }
-
-    .task {
-      background-color: colors.$GRAY3;
-
-      .title {
-        color: colors.$WHITE;
-      }
-    }
+  .title {
+    padding-left: 40px;
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
   }
+}
 
-  h1 {
-    font-size: 32px;
-    font-weight: 600;
-    color: colors.$BIG_TITLE;
-    transition: 300ms color;
-  }
+.scrollArea {
+  height: 572px;
+  padding: 40px;
+  overflow-y: scroll;
+  background-color: #fafbfe;
+  border-radius: 20px;
+  box-shadow: colors.$SHADOW 0 0 15px;
 
-  .tasksTitle {
-    margin: 30px 0 24px;
-    font-size: 12px;
-    font-weight: 600;
-    color: colors.$TASKS_TITLE;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .task {
-    display: flex;
-    align-items: center;
-    height: 72px;
-    line-height: 72px;
-    background-color: colors.$WHITE;
-    border-radius: 32px;
-    box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
-
-    + .task {
-      margin-top: 18px;
-    }
-
-    &.done {
-      .title::after {
-        right: 0;
-      }
-    }
-
-    .checkboxWrapper {
-      @include flexbox.flexbox(center center);
-      position: relative;
-      width: 28px;
-      height: 28px;
-      margin: 0 24px;
-
-      svg {
-        @include position.middleBox;
-        z-index: levels.$CHECK_ICON;
-        color: colors.$WHITE;
-        pointer-events: none;
-        opacity: 0;
-        transition: 0.2s;
-      }
-    }
-
-    input[type='checkbox'] {
-      @include position.middleBox;
-      z-index: levels.$CHECK_BOX;
-      width: 28px;
-      height: 28px;
-      cursor: pointer;
-      border: 2px solid colors.$BLUE;
-      border-radius: 50%;
-      transition: 0.2s;
-
-      &:checked {
-        background-color: colors.$BLUE;
-        border: 0;
-
-        ~ svg {
-          opacity: 1;
-        }
-      }
-    }
-
-    .title {
-      position: relative;
-      overflow: hidden;
-      color: colors.$TASK_ITEM_TITLE;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      &::after {
-        @include position.absolute(50% 100% auto 0);
-        content: '';
-        border-bottom: 2px solid red;
-        transition: 200ms;
-        transition-delay: 500ms;
-      }
-    }
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0;
   }
 }
