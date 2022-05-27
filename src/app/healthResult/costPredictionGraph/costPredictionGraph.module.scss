@@ -1,0 +1,19 @@
+@use 'src/styles/constants/colors';
+@use 'src/styles/constants/sizes';
+
+.notice {
+  font-size: sizes.$REGULAR;
+  font-weight: sizes.$THIN;
+
+  .less {
+    color: colors.$BLUE;
+  }
+
+  .more {
+    color: colors.$ORANGE;
+  }
+
+  .same {
+    color: colors.$BLACK;
+  }
+}
