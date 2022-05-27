@@ -5,4 +5,16 @@ export const COLORS = {
   $GREY_02: '#999A9A',
   $GREY_03: '#666566',
   $WHITE: '#FFFFFF',
+  $BLUE: '#529AFC',
+};
+
+export const SIZES = {
+  $SMALL: '12',
+  $REGULAR: '16',
+  $MEDIUM: '20',
+  $LARGE: '24',
+};
+
+export const FONT_WEIGHT = {
+  $BOLD: 700,
 };

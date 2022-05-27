@@ -5,23 +5,23 @@ export const GRAPH_OPTIONS = {
     tickValues: ['나', '10년 후'],
     style: {
       axis: { strokeWidth: 0 },
-      tickLabels: { fill: COLORS.$GREY_03, fontWeight: 700, fontSize: 20, padding: 20 },
+      tickLabels: { fill: COLORS.$GREY_03, fontWeight: 700, fontSize: 23, padding: 20 },
     },
   },
   bar: {
+    barWidth: 60,
     animate: {
-      duration: 1000,
-      onLoad: { duration: 500 },
+      duration: 500,
+      onLoad: { duration: 2000 },
     },
   },
   line: {
     style: {
       data: { stroke: COLORS.$GREY_02 },
     },
-    animate: { duration: 1000, onLoad: { duration: 1500 } },
+    animate: { duration: 0, onLoad: { duration: 4500 } },
   },
   scatter: {
-    width: 50,
-    size: 5,
+    size: 6,
   },
 };

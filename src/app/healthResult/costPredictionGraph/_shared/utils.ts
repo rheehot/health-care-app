@@ -3,7 +3,7 @@ import { COLORS } from '../../_shared';
 
 export interface IConvertedData {
   x: number;
-  y: string;
+  y: number;
   fill: { bar: string; label: string; scatter: string };
 }
 
@@ -16,7 +16,7 @@ export const convertToData = (curCost: number, afterCost?: number) =>
     if (cost)
       acc[i] = {
         x: i + 1,
-        y: convertNumToUnit(cost),
+        y: cost,
         fill: i
           ? { bar: COLORS.$ORANGE, label: COLORS.$GREY_03, scatter: COLORS.$WHITE }
           : { bar: COLORS.$YELLOW, label: COLORS.$ORANGE, scatter: COLORS.$GREY_02 },

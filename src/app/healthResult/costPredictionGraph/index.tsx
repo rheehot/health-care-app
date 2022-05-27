@@ -3,7 +3,7 @@ import { VictoryChart, VictoryAxis, VictoryBar, VictoryScatter, VictoryLine, Vic
 import Big from 'big.js';
 
 import response from 'data/response.json';
-import { convertToData, compareCost, GRAPH_OPTIONS } from './_shared';
+import { convertToData, compareCost, GRAPH_OPTIONS, convertNumToUnit } from './_shared';
 import { COLORS } from '../_shared';
 
 import cn from 'classnames';
@@ -11,7 +11,8 @@ import styles from './costPredictionGraph.module.scss';
 
 const CostPredictionGraph = () => {
   const [isShowScatter, setIsShowScatter] = useState(false);
-  setTimeout(() => setIsShowScatter(true), 1300);
+
+  setTimeout(() => setIsShowScatter(true), 4400);
 
   const { medi, mediDy } = response.wxcResultMap;
   const currentCost = new Big(medi);
@@ -35,12 +36,12 @@ const CostPredictionGraph = () => {
           {isShowScatter && (
             <VictoryScatter
               data={data}
-              labels={({ datum }) => datum.y}
+              labels={({ datum }) => convertNumToUnit(datum.y)}
               style={{
                 data: { fill: ({ datum }) => datum.fill.scatter, stroke: COLORS.$GREY_02, strokeWidth: 2 },
               }}
               labelComponent={
-                <VictoryLabel dy={-20} style={[{ fill: ({ datum }) => datum.fill.label, fontSize: 20 }]} />
+                <VictoryLabel dy={-20} style={[{ fill: ({ datum }) => datum.fill.label, fontSize: 23 }]} />
               }
               {...GRAPH_OPTIONS.scatter}
             />
