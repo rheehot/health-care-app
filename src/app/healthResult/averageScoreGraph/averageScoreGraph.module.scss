@@ -1,6 +1,14 @@
 .averageWrapper {
-  > p {
-    margin: 0;
+  .descriptionWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .scoreTextWrapper {
+    > p {
+      margin: 0;
+    }
   }
 
   .score {
@@ -9,5 +17,11 @@
 
   .highScoreColor {
     color: blue;
+  }
+
+  .rankText {
+    font-weight: 700;
+    line-height: 0.5;
+    background-color: #ffd202;
   }
 }
