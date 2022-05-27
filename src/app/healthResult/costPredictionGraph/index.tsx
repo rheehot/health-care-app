@@ -12,7 +12,7 @@ import styles from './costPredictionGraph.module.scss';
 const CostPredictionGraph = () => {
   const [isShowScatter, setIsShowScatter] = useState(false);
 
-  setTimeout(() => setIsShowScatter(true), 4400);
+  setTimeout(() => setIsShowScatter(true), 2400);
 
   const { medi, mediDy } = response.wxcResultMap;
   const currentCost = new Big(medi);

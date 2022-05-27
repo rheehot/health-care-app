@@ -12,14 +12,14 @@ export const GRAPH_OPTIONS = {
     barWidth: 60,
     animate: {
       duration: 500,
-      onLoad: { duration: 2000 },
+      onLoad: { duration: 1000 },
     },
   },
   line: {
     style: {
       data: { stroke: COLORS.$GREY_02 },
     },
-    animate: { duration: 0, onLoad: { duration: 4500 } },
+    animate: { duration: 0, onLoad: { duration: 2500 } },
   },
   scatter: {
     size: 6,
