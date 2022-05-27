@@ -37,7 +37,7 @@ const CostPredictionGraph = () => {
               data={data}
               labels={({ datum }) => datum.y}
               style={{
-                data: { fill: ({ datum }) => datum.fill.scatter, stroke: COLORS.GREY_02, strokeWidth: 2 },
+                data: { fill: ({ datum }) => datum.fill.scatter, stroke: COLORS.$GREY_02, strokeWidth: 2 },
               }}
               labelComponent={
                 <VictoryLabel dy={-20} style={[{ fill: ({ datum }) => datum.fill.label, fontSize: 20 }]} />

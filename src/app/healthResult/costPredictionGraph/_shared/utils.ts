@@ -18,8 +18,8 @@ export const convertToData = (curCost: number, afterCost?: number) =>
         x: i + 1,
         y: convertNumToUnit(cost),
         fill: i
-          ? { bar: COLORS.ORANGE, label: COLORS.GREY_03, scatter: COLORS.WHITE }
-          : { bar: COLORS.YELLOW, label: COLORS.ORANGE, scatter: COLORS.GREY_02 },
+          ? { bar: COLORS.$ORANGE, label: COLORS.$GREY_03, scatter: COLORS.$WHITE }
+          : { bar: COLORS.$YELLOW, label: COLORS.$ORANGE, scatter: COLORS.$GREY_02 },
       };
     return acc;
   }, init);

@@ -5,7 +5,7 @@ export const GRAPH_OPTIONS = {
     tickValues: ['나', '10년 후'],
     style: {
       axis: { strokeWidth: 0 },
-      tickLabels: { fill: COLORS.GREY_03, fontWeight: 700, fontSize: 20, padding: 20 },
+      tickLabels: { fill: COLORS.$GREY_03, fontWeight: 700, fontSize: 20, padding: 20 },
     },
   },
   bar: {
@@ -16,7 +16,7 @@ export const GRAPH_OPTIONS = {
   },
   line: {
     style: {
-      data: { stroke: COLORS.GREY_02 },
+      data: { stroke: COLORS.$GREY_02 },
     },
     animate: { duration: 1000, onLoad: { duration: 1500 } },
   },
