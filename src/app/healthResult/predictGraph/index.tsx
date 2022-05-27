@@ -89,7 +89,7 @@ const PredictGraph = () => {
         10년 후 예상 건강점수는
         <br />
         현재 보다&nbsp;
-        <Compare wHscore={wHscore} wHscoreDy={wHscoreDy[decade]} />.
+        <Compare wHscore={wHscore} wHscoreDy={wHscoreDy[decade]} />
       </p>
       <div className={styles.graphWrapper}>
         <DrawGraph wHscore={wHscore} wHscoreDy={wHscoreDy[decade]} />
