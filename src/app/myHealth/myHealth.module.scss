@@ -1,0 +1,105 @@
+@use 'src/styles/constants/colors';
+@use 'src/styles/mixins/flexbox';
+
+.contents {
+  > :nth-child(3) {
+    @include flexbox.flexbox('center', 'center');
+    justify-content: center;
+    height: 115px !important;
+
+    > svg {
+      height: 200px !important;
+    }
+  }
+}
+
+.healthScore {
+  display: flex;
+  margin-bottom: -50px;
+  font-weight: 600;
+
+  .infoIcon {
+    margin-left: 5px;
+  }
+}
+
+.basicInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 15px;
+  background-color: #fff9d9;
+  border: 1px solid #fcf2bd;
+  border-radius: 15px;
+
+  > dt {
+    color: colors.$GRAY02;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+
+    > dd {
+      margin: 0;
+    }
+
+    .borderRight {
+      padding-right: 5px;
+      border-right: 1px solid colors.$GRAY01;
+    }
+  }
+}
+
+.score {
+  position: relative;
+  top: 110px;
+  left: 32px;
+  display: flex;
+  justify-content: center;
+  width: 78%;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 6.5rem;
+
+  & span {
+    padding-left: 5px;
+    font-size: 1rem;
+    line-height: 7rem;
+    color: colors.$GRAYA;
+  }
+}
+
+.date {
+  color: colors.$GRAY6;
+  text-align: center;
+}
+
+.resultButton {
+  all: unset;
+  width: 100%;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: colors.$GRAY6;
+  text-align: center;
+  cursor: pointer;
+}
+
+.analysis {
+  @include flexbox.flexbox('between', 'center');
+  font-size: 1.1rem;
+  line-height: 3rem;
+  letter-spacing: -0.6px;
+
+  > span {
+    font-weight: bold;
+  }
+
+  > button {
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

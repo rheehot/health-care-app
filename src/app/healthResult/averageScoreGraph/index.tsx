@@ -38,11 +38,11 @@ const AverageScoreGraph = () => {
           {isHighRank ? '상위' : '하위'} {100 - wxcResultMap.hscorePercent}%
         </p>
       </div>
-      <VictoryChart domainPadding={70}>
+      <VictoryChart domainPadding={60}>
         <VictoryAxis />
         <VictoryBar
           height={500}
-          barWidth={50}
+          barWidth={35}
           animate={{
             duration: 1000,
             onLoad: { duration: 1000 },
