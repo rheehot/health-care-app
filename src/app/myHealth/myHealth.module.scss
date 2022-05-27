@@ -1,17 +1,7 @@
 @use 'src/styles/constants/colors';
 @use 'src/styles/mixins/flexbox';
 
-.title {
-  padding-left: 40px;
-}
-
 .contents {
-  padding: 40px;
-  background-color: #fafbfe;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: colors.$SHADOW 0 0 15px;
-
   > :nth-child(3) {
     @include flexbox.flexbox('center', 'center');
     justify-content: center;
@@ -25,7 +15,7 @@
 
 .healthScore {
   display: flex;
-  margin-bottom: 56px;
+  margin-bottom: -50px;
   font-weight: 600;
 
   .infoIcon {
@@ -64,7 +54,9 @@
 }
 
 .score {
-  position: absolute;
+  position: relative;
+  top: 110px;
+  left: 32px;
   display: flex;
   justify-content: center;
   width: 78%;

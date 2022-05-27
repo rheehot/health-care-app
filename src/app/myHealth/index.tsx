@@ -16,7 +16,6 @@ const MyHealth = () => {
 
   return (
     <section>
-      <h1 className={styles.title}>마이헬스</h1>
       <div className={styles.contents}>
         <div className={styles.healthScore}>
           <span>김헬스님의 건강점수</span>
