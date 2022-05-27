@@ -41,7 +41,7 @@ const DrawGraph = ({ wHscore, wHscoreDy }: IProps) => {
     <VictoryChart theme={VictoryTheme.material} {...PredictGraphStyle.chart}>
       <VictoryBar
         data={data}
-        labels={({ datum }) => datum.y}
+        labels={({ datum }) => `${datum.y}점`}
         labelComponent={
           <VictoryLabel
             style={[
