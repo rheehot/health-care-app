@@ -1,5 +1,6 @@
 import styles from './app.module.scss';
 import MyHealth from './myHealth';
+import HealthResult from './healthResult';
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
         <h1 className={styles.title}>마이헬스</h1>
         <main className={styles.scrollArea}>
           <MyHealth />
-          <div style={{ height: '200px', backgroundColor: 'yellow' }}>다른컴포넌트</div>
+          <HealthResult />
           <div style={{ height: '200px', backgroundColor: 'red' }}>다른컴포넌트</div>
         </main>
       </div>

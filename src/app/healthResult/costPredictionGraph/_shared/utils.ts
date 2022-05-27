@@ -26,8 +26,8 @@ export const convertToData = (curCost: number, afterCost?: number) =>
 
 export const compareCost = (curCost: Big, afterCost: number) => {
   const result = curCost.minus(afterCost).toNumber();
-  if (result > 0) return { txt: `현재 보다 ${convertNumToUnit(result)}원 적어요`, costStatus: 'less' };
+  if (result > 0) return { txt: ['현재 보다', `${convertNumToUnit(result)}원 적어요`], costStatus: 'less' };
   if (result < 0)
-    return { txt: `현재 보다 ${convertNumToUnit(new Big(result).abs().toNumber())}원 많아요`, costStatus: 'more' };
-  return { txt: `현재와 같아요`, costStatus: 'same' };
+    return { txt: ['현재 보다', `${convertNumToUnit(new Big(result).abs().toNumber())}원 많아요`], costStatus: 'more' };
+  return { txt: ['현재와', `같아요`], costStatus: 'same' };
 };
