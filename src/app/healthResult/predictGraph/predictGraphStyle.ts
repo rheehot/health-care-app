@@ -23,12 +23,6 @@ const PredictGraphStyle = {
     },
   },
 
-  /*   scratter: {
-    style: {
-      data: { fill: COLORS.$GREY_02, stroke: COLORS.$GREY_02, strokeWidth: 5 },
-    },
-  }, */
-
   axis: {
     style: {
       axis: {
