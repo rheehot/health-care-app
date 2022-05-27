@@ -9,10 +9,10 @@ import {
 } from 'victory';
 
 import cx from 'classnames';
-import { COLORS } from '../color';
+import DATA from 'data/response.json';
+import { COLORS, SIZES } from '../color';
 import PredictGraphStyle from './predictGraphStyle';
 import styles from './predictGraph.module.scss';
-import DATA from 'data/response.json';
 
 interface IProps {
   wHscore: number;
@@ -38,13 +38,15 @@ const DrawGraph = ({ wHscore, wHscoreDy }: IProps) => {
   const xAsisLabel = ['나', '10년뒤'];
 
   return (
-    <VictoryChart theme={VictoryTheme.material} domainPadding={20} {...PredictGraphStyle.chart}>
+    <VictoryChart theme={VictoryTheme.material} {...PredictGraphStyle.chart}>
       <VictoryBar
         data={data}
         labels={({ datum }) => datum.y}
         labelComponent={
           <VictoryLabel
-            style={[{ fill: ({ datum }) => (datum.x === 1 ? COLORS.$ORANGE : COLORS.$GREY_03), fontSize: 20 }]}
+            style={[
+              { fill: ({ datum }) => (datum.x === 1 ? COLORS.$ORANGE : COLORS.$GREY_03), fontSize: SIZES.$REGULAR },
+            ]}
             {...PredictGraphStyle.label}
           />
         }
@@ -56,7 +58,18 @@ const DrawGraph = ({ wHscore, wHscoreDy }: IProps) => {
         {...PredictGraphStyle.bar}
       />
       <VictoryLine data={data} {...PredictGraphStyle.line} />
-      <VictoryScatter data={data} symbol='circle' {...PredictGraphStyle.scratter} />
+      <VictoryScatter
+        data={data}
+        symbol='circle'
+        size={({ datum }) => (datum.x === 1 ? 4 : 5)}
+        style={{
+          data: {
+            fill: ({ datum }) => (datum.x === 1 ? COLORS.$GREY_02 : COLORS.$WHITE),
+            stroke: COLORS.$GREY_02,
+            strokeWidth: 2,
+          },
+        }}
+      />
       <VictoryAxis tickValues={xAsisLabel} {...PredictGraphStyle.axis} />
     </VictoryChart>
   );
