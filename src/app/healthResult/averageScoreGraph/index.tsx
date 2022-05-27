@@ -10,6 +10,8 @@ import {
 import data from '../../../data/response.json';
 import styles from './averageScoreGraph.module.scss';
 import cn from 'classnames';
+import { COLORS } from '../_shared/colors';
+import { CallbackArgs } from 'victory-core';
 
 console.log(data);
 
@@ -39,22 +41,28 @@ const AverageScoreGraph = () => {
         </p>
       </div>
       <VictoryChart domainPadding={60}>
-        <VictoryAxis />
+        <VictoryAxis
+          style={{
+            axis: { stroke: 'rgba(255, 99, 71, 0)' },
+            tickLabels: { fontSize: 16, fontWeight: 700, fill: COLORS.$GREY_03 },
+          }}
+        />
+
         <VictoryBar
           height={500}
           barWidth={35}
-          animate={{
-            duration: 1000,
-            onLoad: { duration: 1000 },
-          }}
           style={{
-            data: { fill: '#ffd202' },
-            labels: { fill: '#666666' },
+            data: { fill: ({ datum }) => (datum.user === '나' ? COLORS.$YELLOW : COLORS.$ORANGE) },
+            labels: {
+              fill: ({ datum }: CallbackArgs) => (datum.user === '나' ? COLORS.$ORANGE : COLORS.$GREY_03),
+              fontSize: 16,
+              fontWeight: 700,
+            },
           }}
           data={GRAPTH_DATA}
           x='user'
           y='score'
-          labels={GRAPTH_DATA.map((el) => el.score)}
+          labels={({ datum }) => `${datum.score}점`}
         />
         <VictoryLine
           data={GRAPTH_DATA}
@@ -62,11 +70,23 @@ const AverageScoreGraph = () => {
             duration: 1000,
             onLoad: { duration: 1000 },
           }}
-          style={{ data: { fill: '#666666' } }}
+          style={{ data: { stroke: COLORS.$GREY_02 } }}
           x='user'
           y='score'
         />
-        <VictoryScatter style={{ data: { fill: '#666666' } }} data={GRAPTH_DATA} x='user' y='score' />
+        <VictoryScatter
+          size={4}
+          style={{
+            data: {
+              fill: ({ datum }) => (datum.user === '나' ? COLORS.$GREY_02 : '#ffffff'),
+              stroke: COLORS.$GREY_02,
+              strokeWidth: 2,
+            },
+          }}
+          data={GRAPTH_DATA}
+          x='user'
+          y='score'
+        />
       </VictoryChart>
     </div>
   );
