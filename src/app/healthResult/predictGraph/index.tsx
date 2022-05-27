@@ -35,7 +35,7 @@ const DrawGraph = ({ wHscore, wHscoreDy }: IProps) => {
     { x: 1, y: wHscore },
     { x: 2, y: wHscoreDy },
   ];
-  const xAsisLabel = ['나', '10년뒤'];
+  const xAsisLabel = ['나', '10년 후'];
 
   return (
     <VictoryChart theme={VictoryTheme.material} {...PredictGraphStyle.chart}>
