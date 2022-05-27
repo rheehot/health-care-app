@@ -1,0 +1,40 @@
+@use '/src/styles/constants/colors';
+
+.healthResultWrapper {
+  h2 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 15px;
+
+    .redText {
+      color: colors.$RED;
+    }
+
+    .blueText {
+      color: colors.$BLUE;
+    }
+
+    .blackText {
+      color: colors.$BLACK;
+    }
+
+    .highlight {
+      /*       &::after {
+        z-index: 9;
+        position: relative;
+        top: -10px;
+        z-index: 1;
+        display: block;
+        clear: both;
+        content: '';
+        border-bottom: 10px solid yellow;
+      } */
+    }
+  }
+
+  .graphWrapper {
+    margin: 0 auto;
+  }
+}
