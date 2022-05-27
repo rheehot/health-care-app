@@ -1,19 +1,9 @@
-import {
-  VictoryBar,
-  VictoryChart,
-  VictoryAxis,
-  VictoryTheme,
-  VictoryLine,
-  VictoryScatter,
-  VictoryLabel,
-} from 'victory';
-import data from '../../../data/response.json';
-import styles from './averageScoreGraph.module.scss';
 import cn from 'classnames';
-import { COLORS } from '../_shared/colors';
+import data from '../../../data/response.json';
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryLine, VictoryScatter } from 'victory';
 import { CallbackArgs } from 'victory-core';
-
-console.log(data);
+import styles from './averageScoreGraph.module.scss';
+import { COLORS } from '../_shared/colors';
 
 const AverageScoreGraph = () => {
   const { userInfo, wxcResultMap } = data;
@@ -32,13 +22,17 @@ const AverageScoreGraph = () => {
       <div className={styles.descriptionWrapper}>
         <div className={styles.scoreTextWrapper}>
           <p>30대 남성 평균 점수보다</p>
-          <p className={cn(styles.score, { [styles.highScoreColor]: isHigherMyScore })}>
+          <div className={cn(styles.score, { [styles.highScoreColor]: isHigherMyScore })}>
             {isHigherMyScore ? scoreDifference : -scoreDifference}점 {isHigherMyScore ? '높아요.' : '낮아요.'}
-          </p>
+          </div>
+          <div className={styles.highLight} />
         </div>
-        <p className={styles.rankText}>
-          {isHighRank ? '상위' : '하위'} {100 - wxcResultMap.hscorePercent}%
-        </p>
+        <div>
+          <p className={styles.rankText}>
+            {isHighRank ? '상위' : '하위'} {100 - wxcResultMap.hscorePercent}%
+          </p>
+          <div className={styles.highLight} />
+        </div>
       </div>
       <VictoryChart domainPadding={60}>
         <VictoryAxis
@@ -47,10 +41,10 @@ const AverageScoreGraph = () => {
             tickLabels: { fontSize: 16, fontWeight: 700, fill: COLORS.$GREY_03 },
           }}
         />
-
         <VictoryBar
-          height={500}
-          barWidth={35}
+          data={GRAPTH_DATA}
+          x='user'
+          y='score'
           style={{
             data: { fill: ({ datum }) => (datum.user === '나' ? COLORS.$YELLOW : COLORS.$ORANGE) },
             labels: {
@@ -59,23 +53,24 @@ const AverageScoreGraph = () => {
               fontWeight: 700,
             },
           }}
-          data={GRAPTH_DATA}
-          x='user'
-          y='score'
           labels={({ datum }) => `${datum.score}점`}
+          barWidth={35}
+          height={250}
         />
         <VictoryLine
           data={GRAPTH_DATA}
+          x='user'
+          y='score'
+          style={{ data: { stroke: COLORS.$GREY_02 } }}
           animate={{
             duration: 1000,
             onLoad: { duration: 1000 },
           }}
-          style={{ data: { stroke: COLORS.$GREY_02 } }}
-          x='user'
-          y='score'
         />
         <VictoryScatter
-          size={4}
+          data={GRAPTH_DATA}
+          x='user'
+          y='score'
           style={{
             data: {
               fill: ({ datum }) => (datum.user === '나' ? COLORS.$GREY_02 : '#ffffff'),
@@ -83,9 +78,7 @@ const AverageScoreGraph = () => {
               strokeWidth: 2,
             },
           }}
-          data={GRAPTH_DATA}
-          x='user'
-          y='score'
+          size={4}
         />
       </VictoryChart>
     </div>
