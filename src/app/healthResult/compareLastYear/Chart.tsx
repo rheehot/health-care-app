@@ -9,7 +9,7 @@ import {
 } from 'victory';
 import { CallbackArgs } from 'victory-core';
 
-import { COLORS, SIZES } from '../color';
+import { COLORS, SIZES } from '../_shared';
 
 interface IProps {
   chartDataList: {
