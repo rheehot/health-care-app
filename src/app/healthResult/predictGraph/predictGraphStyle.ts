@@ -1,4 +1,4 @@
-import { COLORS, SIZES } from '../color';
+import { COLORS, SIZES } from '../_shared';
 
 const PredictGraphStyle = {
   chart: {

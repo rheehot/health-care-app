@@ -18,13 +18,13 @@
     bottom: 10px;
     width: 70px;
     height: 10px;
-    background-color: colors.$YELLOW;
+    background-color: colors.$THEME;
   }
 
   .score {
     position: relative;
     z-index: 100;
-    color: colors.$RED;
+    color: colors.$ORANGE;
   }
 
   .highScoreColor {

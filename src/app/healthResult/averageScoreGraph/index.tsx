@@ -3,7 +3,7 @@ import data from '../../../data/response.json';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLine, VictoryScatter } from 'victory';
 import { CallbackArgs } from 'victory-core';
 import styles from './averageScoreGraph.module.scss';
-import { COLORS } from '../_shared/colors';
+import { COLORS } from '../_shared/styles';
 
 const AverageScoreGraph = () => {
   const { userInfo, wxcResultMap } = data;

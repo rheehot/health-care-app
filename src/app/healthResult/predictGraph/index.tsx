@@ -10,7 +10,7 @@ import {
 
 import cx from 'classnames';
 import DATA from 'data/response.json';
-import { COLORS, SIZES } from '../color';
+import { COLORS, SIZES } from '../_shared';
 import PredictGraphStyle from './predictGraphStyle';
 import styles from './predictGraph.module.scss';
 
