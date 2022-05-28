@@ -1,0 +1,41 @@
+@use 'src/styles/constants/sizes';
+@use 'src/styles/constants/colors';
+
+.compareYearCont {
+  position: relative;
+
+  .header {
+    font-size: sizes.$MEDIUM;
+    font-weight: sizes.$BOLD;
+  }
+
+  .showDetailBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 15px;
+    font-size: sizes.$SMALL;
+    background-color: colors.$WHITE;
+    border: 1px solid colors.$GRAYD;
+    border-radius: 20px;
+  }
+
+  .compareResultText {
+    font-size: sizes.$REGULAR;
+
+    .markText {
+      position: relative;
+      z-index: 20;
+      background-color: transparent;
+      box-shadow: inset 0 -10px 0 colors.$YELLOW;
+    }
+
+    .positiveColor {
+      color: colors.$BLUE;
+    }
+
+    .negativeColor {
+      color: colors.$ORANGE;
+    }
+  }
+}
